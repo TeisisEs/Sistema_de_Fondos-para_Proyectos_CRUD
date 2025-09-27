@@ -41,11 +41,13 @@ Puedes ver la demostración del CRUD aquí:
   - Monto patrocinado  
   - Monto de fondos propios  
 - Generación de informes PDF con el siguiente formato:
----  
+  
 Gobierno de El Salvador
+
 Fecha: [fecha actual]
-Id | NombreProyecto | FuenteFondos | MontoPlanificado | MontoPatrocinado | MontoFondosPropios
----
+
+Id | NombreProyecto | FuenteFondos | MontoPlanificado | MontoPatrocinado | MontoFondosPropios | Acciones
+
 
 ## Instalación
 
@@ -56,7 +58,14 @@ git clone <https://github.com/TeisisEs/Sistema_de_Fondos-para_Proyectos_CRUD.git
 
 
 2. Entrar al directorio del proyecto
-cd Sistema_de_Fondos-para_Proyectos_CRUD o tambien utilizar cd prototipo-laravel
+```bash
+cd Sistema_de_Fondos-para_Proyectos_CRUD
+```
+ o tambien utilizar
+ 
+```bash
+cd prototipo-laravel
+```
 
 
 3. Instalar dependencias PHP con Composer
@@ -92,15 +101,18 @@ php artisan migrate --seed
 ```bash
 php artisan serve
 ```
-##Uso
+## Uso
 
-Accede a la URL del servidor local (por defecto http://127.0.0.1:8000
-)
+- Accede a la URL del servidor local (por defecto http://127.0.0.1:8000)
 
-Gestiona los proyectos desde la interfaz CRUD: crear, editar, eliminar y ver listado
+- Gestiona los proyectos desde la interfaz CRUD: crear, editar, eliminar y ver listado
 
-Genera informes PDF con la información de los proyectos y sus fondos
+- Genera informes PDF con la información de los proyectos y sus fondos
 
+## Licencia
+
+Este proyecto está bajo la licencia MIT.
+Puedes ver el archivo LICENSE para más detalles
 
 
 
