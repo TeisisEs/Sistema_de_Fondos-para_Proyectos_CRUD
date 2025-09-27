@@ -2,45 +2,60 @@
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Sistema_de_Fondos-para_Proyectos_CRUD
+# Sistema de Fondos para Proyectos (CRUD)
 
-**Descripción:**  
-CRUD para gestionar proyectos y la fuente de sus fondos (préstamo, banco, hipoteca, institución) y sus montos: planificado, patrocinado y propios.
+## Descripción
+
+Aplicación CRUD para la gestión de proyectos y sus fuentes de financiamiento, permitiendo el control de los siguientes tipos de fondos:
+
+- Préstamos  
+- Bancos  
+- Hipotecas  
+- Instituciones
+- Fuentes personalizadas (definidas dinámicamente por el usuario)  
+
+Cada proyecto registra tres tipos de montos:
+
+- **Monto planificado**  
+- **Monto patrocinado**  
+- **Monto de fondos propios**  
 
 ---
 
-## Demo
+## Demostración
 
 Puedes ver la demostración del CRUD aquí:  
 [https://www.youtube.com/watch?v=urVMyyILvcM](https://www.youtube.com/watch?v=urVMyyILvcM)
 
 ---
 
-## Tecnologías y versiones utilizadas
+## Tecnologías utilizadas
 
-- Laravel Framework 12.31.1  
-- PHP 8.4.10  
-- Composer 2.8.10  
-- Node.js v22.17.0  
-- Git 2.50.1  
-- MySQL Server 9.3.0  
+| Tecnología  | Versión      |
+|-------------|--------------|
+| Laravel     | 12.31.1      |
+| PHP         | 8.4.10       |
+| Composer    | 2.8.10       |
+| Node.js     | v22.17.0     |
+| Git         | 2.50.1       |
+| MySQL       | 9.3.0        |
+
 
 ---
 
 ## Funcionalidades principales
 
-- Registro, actualización, eliminación y visualización de proyectos.  
-- Cada proyecto contiene:  
-  - Fuente de fondos (préstamo, banco, hipoteca, institución)  
-  - Monto planificado  
-  - Monto patrocinado  
-  - Monto de fondos propios  
-- Generación de informes PDF con el siguiente formato:
+- Crear, leer, actualizar y eliminar proyectos.
+- Cada proyecto puede contener:
+  - Fuente de fondos (préstamo, banco, hipoteca, institución)
+  - Monto planificado
+  - Monto patrocinado
+  - Monto de fondos propios
+- Generación de informes en PDF con formato:
+
+### Formato del PDF
   
 Gobierno de El Salvador
 
@@ -48,6 +63,7 @@ Fecha: [fecha actual]
 
 Id | NombreProyecto | FuenteFondos | MontoPlanificado | MontoPatrocinado | MontoFondosPropios | Acciones
 
+---
 
 ## Instalación
 
@@ -101,6 +117,7 @@ php artisan migrate --seed
 ```bash
 php artisan serve
 ```
+---
 ## Uso
 
 - Accede a la URL del servidor local (por defecto http://127.0.0.1:8000)
@@ -108,6 +125,8 @@ php artisan serve
 - Gestiona los proyectos desde la interfaz CRUD: crear, editar, eliminar y ver listado
 
 - Genera informes PDF con la información de los proyectos y sus fondos
+
+---
 
 ## Licencia
 
