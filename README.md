@@ -52,6 +52,7 @@ Id | NombreProyecto | FuenteFondos | MontoPlanificado | MontoPatrocinado | Monto
 1. Clonar el repositorio  
 ```bash
 git clone <https://github.com/TeisisEs/Sistema_de_Fondos-para_Proyectos_CRUD.git>
+```
 
 
 2. Entrar al directorio del proyecto
@@ -61,14 +62,13 @@ cd Sistema_de_Fondos-para_Proyectos_CRUD o tambien utilizar cd prototipo-laravel
 3. Instalar dependencias PHP con Composer
 ```bash
 composer install
-
+```
 
 4. Instalar dependencias de Node.js (opcional, si usas assets)
 
 ```bash
-
 npm install
-
+```
 
 5. Configurar el archivo .env.example con datos de conexión a base de datos
 
@@ -79,18 +79,19 @@ DB_PORT=3306
 DB_DATABASE=nombre_basedatos
 DB_USERNAME=usuario
 DB_PASSWORD=contraseña
+```
 
 6. Ejecutar migraciones y seeders
 
 ```bash
 php artisan migrate --seed
+```
 
 7. Ejecutar servidor local
 
 ```bash
 php artisan serve
-
----
+```
 ##Uso
 
 Accede a la URL del servidor local (por defecto http://127.0.0.1:8000
