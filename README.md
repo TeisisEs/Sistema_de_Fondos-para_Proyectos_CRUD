@@ -69,7 +69,7 @@ Id | NombreProyecto | FuenteFondos | MontoPlanificado | MontoPatrocinado | Monto
 
 1. Clonar el repositorio  
 ```bash
-git clone <https://github.com/TeisisEs/Sistema_de_Fondos-para_Proyectos_CRUD.git>
+git clone <https://github.com/TeisisEs/Sistema_de_Fondos_para_Proyectos_CRUD.git>
 ```
 
 
