@@ -7,55 +7,145 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Proyecto CRUD en Laravel: Gestión de Proyectos Institucionales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Descripción
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Este proyecto implementa una aplicación web para la gestión de proyectos institucionales utilizando el framework Laravel 9 y MySQL como motor de base de datos. La aplicación permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre una tabla de proyectos, así como generar un informe en formato PDF con los datos de los proyectos registrados.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Requisitos
 
-## Learning Laravel
+- PHP 8.1 o superior
+- Composer
+- MySQL 5.7 o superior
+- Laravel 9.x
+- Librería para generación de PDFs (por ejemplo, `dompdf/dompdf`)
+- Node.js y npm (si deseas compilar assets de frontend)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalación
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. Clonar el repositorio:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+   ```bash
+   git clone https://github.com/tu_usuario/proyecto-laravel-crud.git
+   cd proyecto-laravel-crud
+Instalar las dependencias de PHP:
 
-## Laravel Sponsors
+bash
+Copiar código
+composer install
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. Configurar el archivo .env:
 
-### Premium Partners
+Copia el archivo .env.example a .env y configura los parámetros de la base de datos:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+bash
+Copiar código
+cp .env.example .env
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Edita el archivo .env y ajusta las siguientes líneas:
 
-## Code of Conduct
+env
+Copiar código
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nombre_de_tu_base_de_datos
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+4. Generar la clave de la aplicación:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+bash
+Copiar código
+php artisan key:generate
 
-## License
+5. Ejecutar las migraciones para crear la tabla proyectos:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+bash
+Copiar código
+php artisan migrate
+
+6. Instalar las dependencias de frontend (si es necesario):
+
+bash
+Copiar código
+npm install
+npm run dev
+
+## Estructura del Proyecto
+app/
+├── Models/Proyecto.php
+└── Http/Controllers/ProyectoController.php
+
+resources/views/proyectos/
+├── index.blade.php
+├── create.blade.php
+├── edit.blade.php
+└── pdf.blade.php
+
+routes/web.php
+
+## Funcionalidades
+
+CRUD de Proyectos: Crear, leer, actualizar y eliminar proyectos con los siguientes campos:
+
+id: Identificador único del proyecto.
+
+nombre_proyecto: Nombre del proyecto.
+
+fuente_fondos: Fuente de los fondos.
+
+monto_planificado: Monto total planificado.
+
+monto_patrocinado: Monto patrocinado.
+
+monto_fondos_propios: Monto de fondos propios.
+
+## Generación de Informe en PDF: 
+
+Generar un informe en formato PDF con los datos de todos los proyectos registrados, siguiendo el formato :
+
+Gobierno de El Salvador
+Nombre de su institución
+Fecha
+
+Id | NombreProyecto | FuenteFondos | MontoPlanificado | MontoPatrocinado | MontoFondosPropios
+
+## Uso
+1. Iniciar el servidor de desarrollo:
+
+bash
+Copiar código
+php artisan serve
+
+2. Acceder a la aplicación en tu navegador:
+
+arduino
+Copiar código
+http://localhost:8000
+
+3. Navegar a la sección de proyectos para gestionar los registros y generar el informe en PDF.
+
+## Video de demostración
+## https://www.youtube.com/watch?v=urVMyyILvcM
+
+## Contribuciones
+Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, por favor sigue estos pasos:
+
+1. Realiza un fork del repositorio.
+
+2. Crea una rama para tu funcionalidad (git checkout -b feature/nueva-funcionalidad).
+
+3. Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
+
+4. Haz push a la rama (git push origin feature/nueva-funcionalidad).
+
+5. Abre un Pull Request.
+
+## Licencia
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
+
+
