@@ -7,145 +7,108 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Proyecto CRUD en Laravel: Gestión de Proyectos 
+# Sistema_de_Fondos-para_Proyectos_CRUD
 
-## Descripción
+**Descripción:**  
+CRUD para gestionar proyectos y la fuente de sus fondos (préstamo, banco, hipoteca, institución) y sus montos: planificado, patrocinado y propios.
 
-Este proyecto implementa una aplicación web para la gestión de proyectos utilizando el framework Laravel 12 y MySQL como motor de base de datos. La aplicación permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre una tabla de proyectos, así como generar un informe en formato PDF con los datos de los proyectos registrados.
+---
 
-## Requisitos
+## Demo
 
-- PHP 8.1 o superior
-- Composer
-- MySQL 5.7 o superior
-- Laravel 9.x
-- Librería para generación de PDFs (por ejemplo, `dompdf/dompdf`)
-- Node.js y npm (si deseas compilar assets de frontend)
+Puedes ver la demostración del CRUD aquí:  
+[https://www.youtube.com/watch?v=urVMyyILvcM](https://www.youtube.com/watch?v=urVMyyILvcM)
+
+---
+
+## Tecnologías y versiones utilizadas
+
+- Laravel Framework 12.31.1  
+- PHP 8.4.10  
+- Composer 2.8.10  
+- Node.js v22.17.0  
+- Git 2.50.1  
+- MySQL Server 9.3.0  
+
+---
+
+## Funcionalidades principales
+
+- Registro, actualización, eliminación y visualización de proyectos.  
+- Cada proyecto contiene:  
+  - Fuente de fondos (préstamo, banco, hipoteca, institución)  
+  - Monto planificado  
+  - Monto patrocinado  
+  - Monto de fondos propios  
+- Generación de informes PDF con el siguiente formato:
+---  
+Gobierno de El Salvador
+Fecha: [fecha actual]
+Id | NombreProyecto | FuenteFondos | MontoPlanificado | MontoPatrocinado | MontoFondosPropios
+---
 
 ## Instalación
 
-1. Clonar el repositorio:
+1. Clonar el repositorio  
+```bash
+git clone <https://github.com/TeisisEs/Sistema_de_Fondos-para_Proyectos_CRUD.git>
 
-   ```bash
-   git clone https://github.com/tu_usuario/proyecto-laravel-crud.git
-   cd proyecto-laravel-crud
-Instalar las dependencias de PHP:
 
-bash
-Copiar código
+2. Entrar al directorio del proyecto
+cd Sistema_de_Fondos-para_Proyectos_CRUD o tambien utilizar cd prototipo-laravel
+
+
+3. Instalar dependencias PHP con Composer
+```bash
 composer install
 
-3. Configurar el archivo .env:
 
-Copia el archivo .env.example a .env y configura los parámetros de la base de datos:
+4. Instalar dependencias de Node.js (opcional, si usas assets)
 
-bash
-Copiar código
-cp .env.example .env
+```bash
+
+npm install
 
 
-Edita el archivo .env y ajusta las siguientes líneas:
+5. Configurar el archivo .env.example con datos de conexión a base de datos
 
-env
-Copiar código
+```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=nombre_de_tu_base_de_datos
-DB_USERNAME=tu_usuario
-DB_PASSWORD=tu_contraseña
+DB_DATABASE=nombre_basedatos
+DB_USERNAME=usuario
+DB_PASSWORD=contraseña
 
+6. Ejecutar migraciones y seeders
 
-4. Generar la clave de la aplicación:
+```bash
+php artisan migrate --seed
 
-bash
-Copiar código
-php artisan key:generate
+7. Ejecutar servidor local
 
-5. Ejecutar las migraciones para crear la tabla proyectos:
-
-bash
-Copiar código
-php artisan migrate
-
-6. Instalar las dependencias de frontend (si es necesario):
-
-bash
-Copiar código
-npm install
-npm run dev
-
-## Estructura del Proyecto
-app/
-├── Models/Proyecto.php
-└── Http/Controllers/ProyectoController.php
-
-resources/views/proyectos/
-├── index.blade.php
-├── create.blade.php
-├── edit.blade.php
-└── pdf.blade.php
-
-routes/web.php
-
-## Funcionalidades
-
-CRUD de Proyectos: Crear, leer, actualizar y eliminar proyectos con los siguientes campos:
-
-id: Identificador único del proyecto.
-
-nombre_proyecto: Nombre del proyecto.
-
-fuente_fondos: Fuente de los fondos.
-
-monto_planificado: Monto total planificado.
-
-monto_patrocinado: Monto patrocinado.
-
-monto_fondos_propios: Monto de fondos propios.
-
-## Generación de Informe en PDF: 
-
-Generar un informe en formato PDF con los datos de todos los proyectos registrados, siguiendo el formato :
-
-Gobierno de El Salvador
-Nombre de su institución
-Fecha
-
-Id | NombreProyecto | FuenteFondos | MontoPlanificado | MontoPatrocinado | MontoFondosPropios
-
-## Uso
-1. Iniciar el servidor de desarrollo:
-
-bash
-Copiar código
+```bash
 php artisan serve
 
-2. Acceder a la aplicación en tu navegador:
+---
+##Uso
 
-arduino
-Copiar código
-http://localhost:8000
+Accede a la URL del servidor local (por defecto http://127.0.0.1:8000
+)
 
-3. Navegar a la sección de proyectos para gestionar los registros y generar el informe en PDF.
+Gestiona los proyectos desde la interfaz CRUD: crear, editar, eliminar y ver listado
 
-## Video de demostración
-## https://www.youtube.com/watch?v=urVMyyILvcM
+Genera informes PDF con la información de los proyectos y sus fondos
 
-## Contribuciones
-Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, por favor sigue estos pasos:
 
-1. Realiza un fork del repositorio.
 
-2. Crea una rama para tu funcionalidad (git checkout -b feature/nueva-funcionalidad).
 
-3. Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
 
-4. Haz push a la rama (git push origin feature/nueva-funcionalidad).
 
-5. Abre un Pull Request.
 
-## Licencia
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
+
+
+
+
 
 
