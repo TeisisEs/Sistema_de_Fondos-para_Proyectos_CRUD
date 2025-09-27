@@ -7,11 +7,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Proyecto CRUD en Laravel: Gestión de Proyectos Institucionales
+# Proyecto CRUD en Laravel: Gestión de Proyectos 
 
 ## Descripción
 
-Este proyecto implementa una aplicación web para la gestión de proyectos institucionales utilizando el framework Laravel 9 y MySQL como motor de base de datos. La aplicación permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre una tabla de proyectos, así como generar un informe en formato PDF con los datos de los proyectos registrados.
+Este proyecto implementa una aplicación web para la gestión de proyectos utilizando el framework Laravel 12 y MySQL como motor de base de datos. La aplicación permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre una tabla de proyectos, así como generar un informe en formato PDF con los datos de los proyectos registrados.
 
 ## Requisitos
 
